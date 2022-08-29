@@ -85,4 +85,34 @@ else
 {
     Console.WriteLine("Record Not found, Test Failed");
 }
+// choose record and click on the edit button
+Thread.Sleep(5000);
+IWebElement editRecord = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[1]"));
+editRecord.Click();
 
+//Change Description
+Thread.Sleep(5000);
+IWebElement newDescription = driver.FindElement(By.Id("Description"));
+newDescription.Clear();
+newDescription.SendKeys("August 27");
+
+//Click on Save button
+IWebElement editSaveButton = driver.FindElement(By.Id("SaveButton"));
+editSaveButton.Click();
+
+//Check if the changes have been made
+Thread.Sleep(5000);
+IWebElement editGotoLastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
+editGotoLastpageButton.Click();
+
+Thread.Sleep(5000);
+IWebElement changeRecord = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
+if(changeRecord.Text == "August 27")
+{
+    Console.WriteLine("Record Changed Successfully. Test Passed");
+}
+else
+{
+  Console.WriteLine(changeRecord.Text);
+    Console.WriteLine("Change not recorded. Test Failed");
+}
