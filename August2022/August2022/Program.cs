@@ -101,7 +101,7 @@ IWebElement editSaveButton = driver.FindElement(By.Id("SaveButton"));
 editSaveButton.Click();
 
 //Check if the changes have been made
-Thread.Sleep(5000);
+Thread.Sleep(10000);
 IWebElement editGotoLastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
 editGotoLastpageButton.Click();
 
@@ -115,4 +115,35 @@ else
 {
   Console.WriteLine(changeRecord.Text);
     Console.WriteLine("Change not recorded. Test Failed");
+}
+
+//Delete a record
+IWebElement deleteGoTolastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
+deleteGoTolastpageButton.Click();
+
+IWebElement deleteButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[2]"));
+deleteButton.Click();
+
+//click on the prompt button
+driver.SwitchTo().Alert().Accept();
+
+//check if the data is deleted
+driver.Navigate().Refresh();
+
+Thread.Sleep(4000);
+IWebElement refreshGoTolastpageButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
+refreshGoTolastpageButton.Click();
+IWebElement deleteRecord = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+
+
+if (deleteRecord.Text == "Time 1009")
+{
+    Console.WriteLine(deleteRecord.Text);
+    Console.WriteLine("Record not Deleted. Test Failed");
+}
+
+else
+{
+    Console.WriteLine(deleteRecord.Text);
+    Console.WriteLine("Record Deleted. Test Passed");
 }
