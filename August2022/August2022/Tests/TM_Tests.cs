@@ -8,6 +8,7 @@ using OpenQA.Selenium.Chrome;
 namespace August2022.Tests
 {
     [TestFixture]
+    [Parallelizable]
     public class TM_Tests:CommonDriver
      {
 
@@ -40,9 +41,11 @@ namespace August2022.Tests
         public void EditTMTest()
         {
             
-            //Edit TM
+            //TM page object intialisation
             TMPage tmPageObj = new TMPage();
-            tmPageObj.EditTM(driver);
+            //Edit TM
+          // tmPageObj.EditTM(driver);
+
         }
 
         [Test, Order(3), Description("Check if the user is able to Delete a exsisting TM record")]
@@ -57,7 +60,7 @@ namespace August2022.Tests
         [TearDown]
         public void CloseTestRun()
         {
-           // driver.Quit();
+           driver.Quit();
 
         }
 
