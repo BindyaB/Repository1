@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("[Edit time and material record with valid details")]
+        [NUnit.Framework.DescriptionAttribute("Edit time and material record with valid details")]
         [NUnit.Framework.TestCaseAttribute("abc", "Updated", "$45.00", null)]
         [NUnit.Framework.TestCaseAttribute("test", "Metric", "$13.00", null)]
         [NUnit.Framework.TestCaseAttribute("Updated", "star", "$342.00", null)]
@@ -120,7 +120,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Description", description);
             argumentsOfScenario.Add("Code", code);
             argumentsOfScenario.Add("Price", price);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[Edit time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit time and material record with valid details", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -132,7 +132,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 13
- testRunner.Given("I logged into turn up portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I logged into turnup portal successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 14
  testRunner.When("I navigate to time and material page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

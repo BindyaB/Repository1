@@ -10,7 +10,7 @@ Scenario: Create time and material record with valid details
 	Then The record should be created sucessfully
 
 Scenario Outline: Edit time and material record with valid details
-	Given I logged into turn up portal successfully
+	Given I logged into turnup portal successfully
 	When I navigate to time and material page
 	And I update '<Description>', '<Code>' and '<Price>' on an exsisting time and material record
 	Then The record should have the updated '<Description>', '<Code>' and '<Price>'

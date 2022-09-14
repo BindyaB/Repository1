@@ -51,14 +51,6 @@ namespace August2022.StepDefinitions
 
         }
 
-        [Given(@"I logged into turn up portal successfully")]
-        public void GivenILoggedIntoTurnUpPortalSuccessfully()
-        {
-            driver = new ChromeDriver();
-            loginpageObj.LoginSteps(driver);
-        }
-
-
         [When(@"I update '([^']*)', '([^']*)' and '([^']*)' on an exsisting time and material record")]
          public void WhenIUpdateAndOnAnExsistingTimeAndMaterialRecord(string description, string code, string price)
          {

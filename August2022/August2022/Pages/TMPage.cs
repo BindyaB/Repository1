@@ -11,7 +11,6 @@ namespace August2022.Pages
         {
             
 
-
             //Click on the Create New button
             IWebElement createNewButton = driver.FindElement(By.XPath("//*[@id='container']/p/a"));
             createNewButton.Click();
@@ -68,11 +67,6 @@ namespace August2022.Pages
         public void EditTM (IWebDriver driver, string description, string code, string price)
         {
             
-            // Select Time and Material Option
-
-            //IWebElement tmOptions = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));
-            //tmOptions.Click();
-
             Thread.Sleep(7000);
             
             //Go to last page
